@@ -1,17 +1,29 @@
 /* Fondo general */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f2f2f2; /* Gris claro */
+    background-color: #f2f2f2;
     margin: 0;
     padding: 20px;
     color: #333;
 }
 
-/* Título principal */
-h1 {
+/* Encabezado sticky */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffffee;
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 30px;
 }
 
 /* Secciones */
