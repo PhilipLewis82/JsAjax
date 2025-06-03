@@ -1,4 +1,4 @@
-// 1. Detectar palíndromo
+// 1. Deteccion del palíndromo
 function fnDetectarStrPalindromo() {
     const StrTexto = document.getElementById("StrPalindromoInput").value.toLowerCase().replace(/[^a-záéíóúüñ]/gi, "");
     const StrInvertido = StrTexto.split('').reverse().join('');
