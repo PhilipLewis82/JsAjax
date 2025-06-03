@@ -1,58 +1,63 @@
-// 1. Detectar palíndromo
-function fnDetectarStrPalindromo() {
-    const StrTexto = document.getElementById("StrPalindromoInput").value.toLowerCase().replace(/[^a-záéíóúüñ]/gi, "");
-    const StrInvertido = StrTexto.split('').reverse().join('');
-    document.getElementById("StrPalindromoResultado").textContent = (StrTexto === StrInvertido) ? "Es un palíndromo" : "No es un palíndromo";
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solución al Laboratorio Tecnologías JavaScript y AJAX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Solución al Laboratorio Tecnologías JavaScript y AJAX</h1>
 
-// 2. Comparar números
-function fnCompararIntNumeros() {
-    const IntNum1 = parseFloat(document.getElementById("IntNumero1").value);
-    const IntNum2 = parseFloat(document.getElementById("IntNumero2").value);
-    const StrResultado = (IntNum1 === IntNum2) ? "Son iguales" : (IntNum1 > IntNum2) ? `${IntNum1} es mayor` : `${IntNum2} es mayor`;
-    document.getElementById("StrCompararResultado").textContent = StrResultado;
-}
+    <section>
+        <h2>1. Detectar si la cadena de entrada es un palíndromo</h2>
+        <input type="text" id="StrPalindromoInput" placeholder="Ingresa una palabra o frase">
+        <button onclick="fnDetectarStrPalindromo()">Comprobar</button>
+        <p id="StrPalindromoResultado"></p>
+    </section>
 
-// 3. Mostrar vocales
-function fnMostrarStrVocales() {
-    const StrFrase = document.getElementById("StrFraseVocales").value.toLowerCase();
-    const ArrVocales = StrFrase.match(/[aeiouáéíóúü]/g);
-    document.getElementById("StrVocalesResultado").textContent = ArrVocales ? [...new Set(ArrVocales)].join(', ') : "No hay vocales";
-}
+    <section>
+        <h2>2. Escribe un programa que pida dos números y escriba en la pantalla cuál es el mayor</h2>
+        <input type="number" id="IntNumero1" placeholder="Número 1">
+        <input type="number" id="IntNumero2" placeholder="Número 2">
+        <button onclick="fnCompararIntNumeros()">Comparar</button>
+        <p id="StrCompararResultado"></p>
+    </section>
 
-// 4. Contar vocales
-function fnContarStrVocales() {
-    const StrFrase = document.getElementById("StrFraseContar").value.toLowerCase();
-    const ObjConteo = { a: 0, e: 0, i: 0, o: 0, u: 0 };
-    for (const StrLetra of StrFrase) {
-        if (ObjConteo.hasOwnProperty(StrLetra)) ObjConteo[StrLetra]++;
-    }
-    let StrResultado = "";
-    for (const [StrVocal, IntCantidad] of Object.entries(ObjConteo)) {
-        StrResultado += `${StrVocal}: ${IntCantidad}\n`;
-    }
-    document.getElementById("StrConteoVocales").textContent = StrResultado;
-}
+    <section>
+        <h2>3. Escribe un programa que pida una frase y escriba las vocales que aparecen</h2>
+        <input type="text" id="StrFraseVocales" placeholder="Escribe una frase">
+        <button onclick="fnMostrarStrVocales()">Mostrar vocales</button>
+        <p id="StrVocalesResultado"></p>
+    </section>
 
-// 5. AJAX: al cargar
-window.onload = () => {
-    document.getElementById("StrUrlInput").value = window.location.href;
-}
+    <section>
+        <h2>4. Escribe un programa que pida una frase y escriba cuántas veces aparecen cada una de las vocales</h2>
+        <input type="text" id="StrFraseContar" placeholder="Escribe una frase">
+        <button onclick="fnContarStrVocales()">Contar vocales</button>
+        <p id="StrConteoVocales"></p>
+    </section>
 
-// 6. AJAX: Mostrar contenido de URL
-function fnMostrarStrContenido() {
-    const StrUrl = document.getElementById("StrUrlInput").value;
-    const ObjXhr = new XMLHttpRequest();
+    <section>
+        <h2>AJAX. A partir de la página web proporcionada, se pide añadir el código necesario para que:</h2>
 
-    ObjXhr.onreadystatechange = function () {
-        document.getElementById("StrEstado").textContent = `Estado: ${ObjXhr.readyState}`;
-        if (ObjXhr.readyState === 4) {
-            document.getElementById("StrContenido").textContent = ObjXhr.responseText;
-            document.getElementById("StrCodigoEstado").textContent = `${ObjXhr.status} ${ObjXhr.statusText}`;
-            document.getElementById("StrCabeceras").textContent = ObjXhr.getAllResponseHeaders();
-        }
-    };
+        <h3>1. Al cargar la página, el cuadro de texto debe mostrar por defecto la URL de la propia página</h3>
+        <input type="text" id="StrUrlInput">
 
-    ObjXhr.open("GET", StrUrl, true);
-    ObjXhr.send();
-}
+        <h3>2. Al pulsar el botón Mostrar Contenidos, se debe descargar mediante peticiones AJAX el contenido correspondiente a la URL introducida por el usuario. El contenido de la respuesta recibida del servidor se debe mostrar en la zona de Contenidos del archivo</h3>
+        <button onclick="fnMostrarStrContenido()">Mostrar Contenidos</button>
+        <div id="StrContenido"></div>
+
+        <h3>3. En la zona Estados de la petición se debe mostrar en todo momento el estado en el que se encuentra la petición (no iniciada, cargando, completada, etc.)</h3>
+        <div id="StrEstado"></div>
+
+        <h3>4. Mostrar el contenido de todas las cabeceras de la respuesta del servidor en la zona Cabeceras HTTP de la respuesta del servidor</h3>
+        <textarea id="StrCabeceras"></textarea>
+
+        <h3>5. Mostrar el código y texto de la respuesta del servidor en la zona Código de estado</h3>
+        <div id="StrCodigoEstado"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
