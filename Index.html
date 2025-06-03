@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios JavaScript + AJAX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ejercicios JavaScript + AJAX</h1>
+
+    <section>
+        <h2>1. Detectar palíndromo</h2>
+        <input type="text" id="StrPalindromoInput" placeholder="Ingresa una palabra o frase">
+        <button onclick="fnDetectarStrPalindromo()">Comprobar</button>
+        <p id="StrPalindromoResultado"></p>
+    </section>
+
+    <section>
+        <h2>2. Comparar dos números</h2>
+        <input type="number" id="IntNumero1" placeholder="Número 1">
+        <input type="number" id="IntNumero2" placeholder="Número 2">
+        <button onclick="fnCompararIntNumeros()">Comparar</button>
+        <p id="StrCompararResultado"></p>
+    </section>
+
+    <section>
+        <h2>3. Vocales en frase</h2>
+        <input type="text" id="StrFraseVocales" placeholder="Escribe una frase">
+        <button onclick="fnMostrarStrVocales()">Mostrar vocales</button>
+        <p id="StrVocalesResultado"></p>
+    </section>
+
+    <section>
+        <h2>4. Contar vocales</h2>
+        <input type="text" id="StrFraseContar" placeholder="Escribe una frase">
+        <button onclick="fnContarStrVocales()">Contar vocales</button>
+        <p id="StrConteoVocales"></p>
+    </section>
+
+    <section>
+        <h2>AJAX</h2>
+        <input type="text" id="StrUrlInput">
+        <button onclick="fnMostrarStrContenido()">Mostrar Contenidos</button>
+        <h3>Contenidos</h3>
+        <div id="StrContenido"></div>
+        <h3>Estado de la petición</h3>
+        <div id="StrEstado"></div>
+        <h3>Cabeceras HTTP</h3>
+        <textarea id="StrCabeceras"></textarea>
+        <h3>Código de estado</h3>
+        <div id="StrCodigoEstado"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
