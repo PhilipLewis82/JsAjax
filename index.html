@@ -2,21 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicios JavaScript + AJAX</title>
+    <title>Solución al Laboratorio Tecnologías JavaScript y AJAX</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ejercicios JavaScript + AJAX</h1>
+    <h1>Solución al Laboratorio Tecnologías JavaScript y AJAX</h1>
 
     <section>
-        <h2>1. Detectar palíndromo</h2>
+        <h2>1. Detectar si la cadena de entrada es un palíndromo</h2>
         <input type="text" id="StrPalindromoInput" placeholder="Ingresa una palabra o frase">
         <button onclick="fnDetectarStrPalindromo()">Comprobar</button>
         <p id="StrPalindromoResultado"></p>
     </section>
 
     <section>
-        <h2>2. Comparar dos números</h2>
+        <h2>2. Escribe un programa que pida dos números y escriba en la pantalla cuál es el mayor</h2>
         <input type="number" id="IntNumero1" placeholder="Número 1">
         <input type="number" id="IntNumero2" placeholder="Número 2">
         <button onclick="fnCompararIntNumeros()">Comparar</button>
@@ -24,30 +24,36 @@
     </section>
 
     <section>
-        <h2>3. Vocales en frase</h2>
+        <h2>3. Escribe un programa que pida una frase y escriba las vocales que aparecen</h2>
         <input type="text" id="StrFraseVocales" placeholder="Escribe una frase">
         <button onclick="fnMostrarStrVocales()">Mostrar vocales</button>
         <p id="StrVocalesResultado"></p>
     </section>
 
     <section>
-        <h2>4. Contar vocales</h2>
+        <h2>4. Escribe un programa que pida una frase y escriba cuántas veces aparecen cada una de las vocales</h2>
         <input type="text" id="StrFraseContar" placeholder="Escribe una frase">
         <button onclick="fnContarStrVocales()">Contar vocales</button>
         <p id="StrConteoVocales"></p>
     </section>
 
     <section>
-        <h2>AJAX</h2>
+        <h2>AJAX. A partir de la página web proporcionada, se pide añadir el código necesario para que:</h2>
+
+        <h3>1. Al cargar la página, el cuadro de texto debe mostrar por defecto la URL de la propia página</h3>
         <input type="text" id="StrUrlInput">
+
+        <h3>2. Al pulsar el botón Mostrar Contenidos, se debe descargar mediante peticiones AJAX el contenido correspondiente a la URL introducida por el usuario. El contenido de la respuesta recibida del servidor se debe mostrar en la zona de Contenidos del archivo</h3>
         <button onclick="fnMostrarStrContenido()">Mostrar Contenidos</button>
-        <h3>Contenidos</h3>
         <div id="StrContenido"></div>
-        <h3>Estado de la petición</h3>
+
+        <h3>3. En la zona Estados de la petición se debe mostrar en todo momento el estado en el que se encuentra la petición (no iniciada, cargando, completada, etc.)</h3>
         <div id="StrEstado"></div>
-        <h3>Cabeceras HTTP</h3>
+
+        <h3>4. Mostrar el contenido de todas las cabeceras de la respuesta del servidor en la zona Cabeceras HTTP de la respuesta del servidor</h3>
         <textarea id="StrCabeceras"></textarea>
-        <h3>Código de estado</h3>
+
+        <h3>5. Mostrar el código y texto de la respuesta del servidor en la zona Código de estado</h3>
         <div id="StrCodigoEstado"></div>
     </section>
 
